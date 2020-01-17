@@ -95,9 +95,14 @@ const Search = (props) => {
         <WeatherResult weatherResult={props.searchResultSuccess} />
       </Container>
 
-
-      <Container className={classes.graph} >
+      {props.twentyFourHoursHistory.length === 0 ? null : <Container className={classes.graph} >
         <Grid container spacing={1}>
+          <Grid item xs={12}>
+            <WeatherCard graphToMap={props.twentyFourHoursHistory} />
+          </Grid>
+          <Grid item xs={12}>
+            <WeatherCard graphToMap={props.fiveDaysHistory} />
+          </Grid>
           <Grid item xs={12} className={classes.select}>
             <Paper>
               <WeatherRadio selectValue={props.selectValue} setSelectValue={props.setSelectValue} />
@@ -109,14 +114,10 @@ const Search = (props) => {
           <Grid item xs={12} >
             <Rechart selectValue={props.selectValue} width={750} graphToMap={props.fiveDaysHistory} />
           </Grid>
-          <Grid item xs={12}>
-            <WeatherCard graphToMap={props.twentyFourHoursHistory} />
-          </Grid>
-          <Grid item xs={12}>
-            <WeatherCard graphToMap={props.fiveDaysHistory} />
-          </Grid>
         </Grid>
-      </Container>
+      </Container>}
+
+
 
       <SnackBar snackBarValue={props.snackBarValue}
         setSnackBarValue={props.setSnackBarValue}

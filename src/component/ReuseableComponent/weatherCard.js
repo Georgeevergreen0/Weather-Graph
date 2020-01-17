@@ -33,9 +33,6 @@ const useStyles = makeStyles({
         alignItems: "stretch",
         justifyContent: "space-between",
         textAlign: "center"
-    },
-    media: {
-        backgroundImage: 'linear-gradient(45deg, #3f51b5,#fff)',
     }
 });
 
@@ -54,7 +51,6 @@ const WeatherCard = (props) => {
                                 src={`http://openweathermap.org/img/wn/${mapValue.icon}@2x.png`}
                                 component="img"
                                 title="weather Images"
-                                className={classes.media}
                             />
                             <CardContent>
                                 <Typography variant="body2" color="textSecondary" component="div">

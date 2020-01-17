@@ -30,9 +30,9 @@ function Main(props) {
         }
         setSearchingState(true);
         setSearchInput("");
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchInputValue}&units=metric`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchInputValue}&units=metric&appid=${process.env.REACT_APP_API}`)
             .then((res) => {
-                axios.get(`https://api.openweathermap.org/data/2.5/forecast?id=${res.data.id}&units=metric`)
+                axios.get(`https://api.openweathermap.org/data/2.5/forecast?id=${res.data.id}&units=metric&appid=${process.env.REACT_APP_API}`)
                     .then((response) => {
                         setSearchingState(false);
                         setSearchResultSuccess([res.data])
@@ -40,8 +40,7 @@ function Main(props) {
 
                         const twentyFourHoursHistoryArray = []
                         const fiveDaysHistoryArray = []
-                        let i = 0;
-                        response.data.list.forEach((mapValue) => {
+                        response.data.list.forEach((mapValue, i) => {
 
                             if (i < 8) {
                                 twentyFourHoursHistoryArray.push({
@@ -60,8 +59,6 @@ function Main(props) {
                                     ...mapValue.weather[0]
                                 })
                             }
-
-                            i += 1
                         })
                         setTwentyFourHoursHistory(twentyFourHoursHistoryArray)
                         setFiveDaysHistory(fiveDaysHistoryArray)
