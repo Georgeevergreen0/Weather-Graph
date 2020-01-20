@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import WeatherResult from "../ReuseableComponent/weatherResult"
 import image from "../../asset/weather-day.jpg";
 import SnackBar from "./SnackBar"
 import searchImage from "../../asset/weather-search.jpg";
@@ -16,7 +15,9 @@ import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import SearchIcon from '@material-ui/icons/Search';
 import Rechart from "../Rechart/Rechart";
 import WeatherCard from "../ReuseableComponent/weatherCard";
+import WeatherResult from "../ReuseableComponent/weatherResult"
 import WeatherRadio from "../ReuseableComponent/WeatherRadio";
+import Map from "../ReuseableComponent/Map";
 
 
 const useStyles = makeStyles(theme => ({
@@ -100,19 +101,16 @@ const Search = (props) => {
           <Grid item xs={12}>
             <WeatherCard graphToMap={props.twentyFourHoursHistory} />
           </Grid>
-          <Grid item xs={12}>
-            <WeatherCard graphToMap={props.fiveDaysHistory} />
-          </Grid>
           <Grid item xs={12} className={classes.select}>
             <Paper>
               <WeatherRadio selectValue={props.selectValue} setSelectValue={props.setSelectValue} />
             </Paper>
           </Grid>
-          <Grid item xs={12}>
-            <Rechart selectValue={props.selectValue} width={1000} graphToMap={props.twentyFourHoursHistory} />
+          <Grid item xs={12} >
+            <Rechart selectValue={props.selectValue} width={600} graphToMap={props.fiveDaysHistory} />
           </Grid>
           <Grid item xs={12} >
-            <Rechart selectValue={props.selectValue} width={750} graphToMap={props.fiveDaysHistory} />
+            <Map weatherResult={props.searchResultSuccess} />
           </Grid>
         </Grid>
       </Container>}

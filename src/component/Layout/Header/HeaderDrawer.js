@@ -33,14 +33,6 @@ const HeaderDrawer = (props) => {
                 role="presentation"
                 onClick={() => { props.toggleSideDrawer(false) }}
             >
-                <Divider />
-
-                <List>
-                    <ImgMediaCard />
-                </List>
-
-                <Divider variant="middle" />
-
                 <List>
                     <ListItem selected={props.locationValue === "/search"} component={NavLink} to="/search" >
                         <ListItemIcon>
@@ -68,7 +60,11 @@ const HeaderDrawer = (props) => {
                     </ListItem>
                 </List>
 
-                <Divider />
+                <Divider variant="middle" />
+
+                <List>
+                    <ImgMediaCard />
+                </List>
             </div>
         </Drawer>
     )

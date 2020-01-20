@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Facebook from '@material-ui/icons/Facebook';
+import GitHub from '@material-ui/icons/GitHub';
 import Twitter from '@material-ui/icons/Twitter';
 import Instagram from '@material-ui/icons/Instagram';
 import HeaderDrawer from "./HeaderDrawer"
@@ -37,13 +37,13 @@ const Header = (props) => {
     return (
         <>
             <HeaderDrawer toggleSideDrawer={toggleSideDrawer} drawerValue={drawerValue} locationValue={props.locationValue} />
-            <AppBar position="fixed" className={classes.root}>
+            <AppBar position="sticky" className={classes.root}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={() => { toggleSideDrawer(true) }}>
                         <MenuIcon />
                     </IconButton>
                     <div className={classes.spacing} ></div>
-                    <Button color="inherit"> <Facebook /></Button>
+                    <Button color="inherit"> <GitHub /></Button>
                     <Button color="inherit"> <Twitter /></Button>
                     <Button color="inherit"> <Instagram /></Button>
                 </Toolbar>

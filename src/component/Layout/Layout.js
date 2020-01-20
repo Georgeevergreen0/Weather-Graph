@@ -31,8 +31,6 @@ const Layout = (props) => {
 
     return (
         <div className={classes.root}>
-            <div className={classes.toolBaroffset}></div>
-            <div className={classes.navigationOffset}></div>
             <Header locationValue={locationValue} setLocation={setLocation} />
             {props.children}
         </div>

@@ -7,15 +7,20 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Image from "../../asset/Weather forecast hourly graphic.svg"
+import Image from "../../asset/evergreen.jpg"
 
 const useStyles = makeStyles({
     card: {
         maxWidth: 250,
+        "box-shadow": "none"
     },
+    icon: {
+        display: "center",
+        justifyContent: "center"
+    }
 });
 
 const ImgMediaCard = (props) => {
@@ -31,29 +36,28 @@ const ImgMediaCard = (props) => {
                     image={Image}
                     title="Contemplative Reptile"
                 />
+
                 <CardContent>
-                    <Typography color="primary" gutterBottom variant="h5" component="h2">
+                    <Typography color="primary" align="center" gutterBottom variant="h5" component="h2">
                         Weather Graph
-          </Typography>
-                    <Typography variant="subtitle2" color="textSecondary" component="p">
-                        <Typography gutterBottom variant="subtitle2" color="primary" component="span">Powered by: </Typography> RereactJS <br />
-                        <Typography gutterBottom variant="subtitle2" color="primary" component="span">Component: </Typography> Material-UI<br />
-                        <Typography gutterBottom variant="subtitle2" color="primary" component="span">API: </Typography> Openweathermap<br />
-                        <Typography gutterBottom variant="subtitle2" color="primary" component="span">Graph: </Typography> Recharts <br />
-                        <Typography gutterBottom variant="subtitle2" color="primary" component="span">Designed: </Typography>  Evergreen George<br />
+                    </Typography>
+                    <Typography variant="subtitle2" color="primary" component="p" align="center" >
+                        <Typography gutterBottom variant="subtitle2" color="textSecondary" component="span">Designed by </Typography> <br />
+                        Evergreen George
                     </Typography>
                 </CardContent>
+
             </CardActionArea>
 
-            <CardActions>
-                <Button size="small" color="primary">
-                    <FavoriteIcon />
-                </Button>
-                <Button size="small" color="primary">
-                    <ShareIcon />
-                </Button>
+            <CardActions className={classes.icon} >
                 <Button size="small" color="primary">
                     <GitHubIcon />
+                </Button>
+                <Button size="small" color="primary">
+                    <InstagramIcon />
+                </Button>
+                <Button size="small" color="primary">
+                    <TwitterIcon />
                 </Button>
             </CardActions>
         </Card>

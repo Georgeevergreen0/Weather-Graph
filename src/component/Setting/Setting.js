@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -21,10 +22,10 @@ const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
         backgroundColor: theme.palette.background.paper,
-    }, formControl: {
-        marginLeft: theme.spacing(4),
-        minWidth: 120,
-    }
+    }, //formControl: {
+    //     marginLeft: theme.spacing(4),
+    //     minWidth: 120,
+    // }
 }));
 
 const Setting = (props) => {
@@ -47,7 +48,7 @@ const Setting = (props) => {
         setUnitValue(event.target.value);
     };
 
-    const switchHandler = value => () => {
+    const switchHandler = value => (event) => {
         const currentIndex = switchValue.indexOf(value);
         const newChecked = [...switchValue];
 
@@ -63,7 +64,7 @@ const Setting = (props) => {
 
 
 
-    return (
+    return (<div>
         <List subheader={<ListSubheader>Settings</ListSubheader>} className={classes.root}>
 
             <Divider />
@@ -83,7 +84,7 @@ const Setting = (props) => {
                 </ListItemSecondaryAction>
             </ListItem>
 
-            <Divider variant="inset" component="li" />
+            <Divider variant="inset" />
 
             <ListItem>
                 <ListItemIcon>
@@ -106,7 +107,25 @@ const Setting = (props) => {
                 </ListItemSecondaryAction>
             </ListItem>
 
-            <Divider variant="inset" component="li" />
+            <Divider variant="inset" />
+
+            <ListItem>
+                <ListItemIcon>
+                    <PlaceIcon color="primary" />
+                </ListItemIcon>
+                <ListItemText id="switch-list-label-bluetooth" primary="Use current location" secondary={switchValue.indexOf('place') !== -1 ? "On" : "Off"} />
+                <ListItemSecondaryAction>
+                    <Switch
+                        edge="end"
+                        onChange={switchHandler('place')}
+                        checked={switchValue.indexOf('place') !== -1}
+                        inputProps={{ 'aria-labelledby': 'switch-list-label-bluetooth' }}
+                        color="primary"
+                    />
+                </ListItemSecondaryAction>
+            </ListItem>
+
+            <Divider variant="inset" />
 
             <ListItem>
                 <ListItemIcon>
@@ -123,8 +142,14 @@ const Setting = (props) => {
                     />
                 </ListItemSecondaryAction>
             </ListItem>
-
         </List>
+
+        <Typography variant="subtitle2" color="primary" component="p" align="center" >
+            <Typography gutterBottom variant="subtitle2" color="textSecondary" component="span">Designed by </Typography> <br />
+            Evergreen George  <br />
+            <Typography gutterBottom variant="subtitle2" color="textSecondary" component="span">&copy;2020</Typography>
+        </Typography>
+    </div>
     );
 }
 
