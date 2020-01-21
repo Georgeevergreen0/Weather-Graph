@@ -10,7 +10,10 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import Switch from '@material-ui/core/Switch';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import AutorenewIcon from '@material-ui/icons/Autorenew';
+import LocationOffIcon from '@material-ui/icons/LocationOff';
 import PlaceIcon from '@material-ui/icons/Place';
+import GpsFixedIcon from '@material-ui/icons/GpsFixed';
+import GpsOffIcon from '@material-ui/icons/GpsOff';
 import Divider from '@material-ui/core/Divider';
 import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -22,10 +25,7 @@ const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
         backgroundColor: theme.palette.background.paper,
-    }, //formControl: {
-    //     marginLeft: theme.spacing(4),
-    //     minWidth: 120,
-    // }
+    },
 }));
 
 const Setting = (props) => {
@@ -108,10 +108,9 @@ const Setting = (props) => {
             </ListItem>
 
             <Divider variant="inset" />
-
             <ListItem>
                 <ListItemIcon>
-                    <PlaceIcon color="primary" />
+                    {switchValue.indexOf('place') !== -1 ? <PlaceIcon color="primary" /> : <LocationOffIcon color="primary" />}
                 </ListItemIcon>
                 <ListItemText id="switch-list-label-bluetooth" primary="Use current location" secondary={switchValue.indexOf('place') !== -1 ? "On" : "Off"} />
                 <ListItemSecondaryAction>
@@ -126,17 +125,16 @@ const Setting = (props) => {
             </ListItem>
 
             <Divider variant="inset" />
-
             <ListItem>
                 <ListItemIcon>
-                    <PlaceIcon color="primary" />
+                    {switchValue.indexOf('map') !== -1 ? <GpsFixedIcon color="primary" /> : <GpsOffIcon color="primary" />}
                 </ListItemIcon>
-                <ListItemText id="switch-list-label-bluetooth" primary="Use current location" secondary="On" />
+                <ListItemText id="switch-list-label-bluetooth" primary="Display map" secondary={switchValue.indexOf('map') !== -1 ? "On" : "Off"} />
                 <ListItemSecondaryAction>
                     <Switch
                         edge="end"
-                        onChange={switchHandler('bluetooth')}
-                        checked={switchValue.indexOf('bluetooth') !== -1}
+                        onChange={switchHandler('map')}
+                        checked={switchValue.indexOf('map') !== -1}
                         inputProps={{ 'aria-labelledby': 'switch-list-label-bluetooth' }}
                         color="primary"
                     />

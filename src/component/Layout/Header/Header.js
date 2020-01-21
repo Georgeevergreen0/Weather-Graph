@@ -43,9 +43,9 @@ const Header = (props) => {
                         <MenuIcon />
                     </IconButton>
                     <div className={classes.spacing} ></div>
-                    <Button color="inherit"> <GitHub /></Button>
-                    <Button color="inherit"> <Twitter /></Button>
-                    <Button color="inherit"> <Instagram /></Button>
+                    <Button rel="noopener noreferrer" href="https://github.com/georgeevergreen0" target="_blank" color="inherit"> <GitHub /></Button>
+                    <Button rel="noopener noreferrer" href="https://twitter.com/georgeevergreen" target="_blank" color="inherit"> <Twitter /></Button>
+                    <Button rel="noopener noreferrer" href="https://instagram.com/georgeevergreen" target="_blank" color="inherit"> <Instagram /></Button>
                 </Toolbar>
                 <HeaderNavigation locationValue={props.locationValue} setLocation={props.setLocation} />
             </AppBar>

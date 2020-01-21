@@ -3,14 +3,6 @@ import {
     AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label
 } from 'recharts';
 
-//       {
-//         "dt": 1578409200,
-//         "main": {
-//           "temp": 284.92,
-//           "pressure": 1020,
-//           "humidity": 90,
-//         }
-
 class ChartArea extends PureComponent {
     render() {
         const data = this.props.graphToMap;
