@@ -47,7 +47,7 @@ const HeaderDrawer = (props) => {
                         <ListItemIcon>
                             <HistoryIcon color="primary" />
                         </ListItemIcon>
-                        <ListItemText primary="History" />
+                        <ListItemText primary="Recents" />
                     </ListItem>
 
                     <Divider variant="middle" />

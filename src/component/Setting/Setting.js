@@ -37,7 +37,7 @@ const Setting = (props) => {
 
     const [refreshValue, setRefreshValue] = React.useState(true);
     const [unitValue, setUnitValue] = React.useState('C');
-    const [switchValue, setSwitchValue] = React.useState([]);
+    const [switchValue, setSwitchValue] = React.useState(['map']);
 
 
     const refreshHandler = event => {

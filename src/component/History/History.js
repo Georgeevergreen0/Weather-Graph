@@ -25,7 +25,7 @@ const History = (props) => {
         <>
             <div className={classes.heading}>
                 <Typography variant="h6" align="center" >WEATHER GRAPH</Typography>
-                <Typography variant="body2" align="center" >History</Typography>
+                <Typography variant="body2" align="center" >Recents</Typography>
             </div>
             <Container>
                 <WeatherResult weatherResult={props.searchResultSSuccessHistory} />

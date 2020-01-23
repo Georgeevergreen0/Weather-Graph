@@ -64,6 +64,12 @@ const Search = (props) => {
     window.document.body.style.backgroundImage = `URL(${image})`;
   }, []);
 
+  const searchWithEnter = (event) => {
+    if (event.which === 13) {
+      props.searchCityWeather()
+    }
+  }
+
   return (
     <div>
 
@@ -83,6 +89,7 @@ const Search = (props) => {
           onChange={props.setSearchInputValue}
           value={props.searchInputValue}
           error={props.searchResultFail !== ""}
+          onKeyPress={searchWithEnter}
         />
         <Divider className={classes.divider} orientation="vertical" color="primary" />
         {props.searchingState ? <IconButton aria-label="search">

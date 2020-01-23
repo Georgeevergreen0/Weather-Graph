@@ -31,10 +31,10 @@ const ImgMediaCard = (props) => {
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt="Image of Evergreen"
 
                     image={Image}
-                    title="Contemplative Reptile"
+                    title="Image of Evergreen"
                 />
 
                 <CardContent>
@@ -53,10 +53,10 @@ const ImgMediaCard = (props) => {
                 <Button size="small" rel="noopener noreferrer" href="https://github.com/georgeevergreen0" target="_blank" color="primary">
                     <GitHubIcon />
                 </Button>
-                <Button size="small" rel="noopener noreferrer" href="https://twitter.com/georgeevergreen" target="_blank" color="primary">
+                <Button size="small" rel="noopener noreferrer" href="https://instagram.com/georgeevergreen" target="_blank" color="primary">
                     <InstagramIcon />
                 </Button>
-                <Button size="small" rel="noopener noreferrer" href="https://instagram.com/georgeevergreen" target="_blank" color="primary">
+                <Button size="small" rel="noopener noreferrer" href="https://twitter.com/georgeevergreen" target="_blank" color="primary">
                     <TwitterIcon />
                 </Button>
             </CardActions>
