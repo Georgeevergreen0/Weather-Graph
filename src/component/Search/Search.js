@@ -90,6 +90,8 @@ const Search = (props) => {
           value={props.searchInputValue}
           error={props.searchResultFail !== ""}
           onKeyPress={searchWithEnter}
+          autoComplete="true"
+          autoCorrect="true"
         />
         <Divider className={classes.divider} orientation="vertical" color="primary" />
         {props.searchingState ? <IconButton aria-label="search">
@@ -114,7 +116,7 @@ const Search = (props) => {
             </Paper>
           </Grid>
           <Grid item xs={12} >
-            <Rechart selectValue={props.selectValue} width={600} graphToMap={props.fiveDaysHistory} />
+            <Rechart selectValue={props.selectValue} graphToMap={props.fiveDaysHistory} />
           </Grid>
           <Grid item xs={12} >
             <Map weatherResult={props.searchResultSuccess} />
